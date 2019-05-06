@@ -1,0 +1,12 @@
+<div>
+  <label>
+    <input [(ngModel)]="usr.id" placeholder="id"/>
+    <input [(ngModel)]="usr.name" placeholder="name"/>
+    <input [(ngModel)]="usr.age" placeholder="age"/>
+  </label>
+</div>
+
+<table>
+  <tr><th>User no:</th><th>NAME</th><th>Age</th></tr>
+  <tr><td>{{usr.id}}</td><td>{{usr.name}}</td><td>{{usr.age}}</td></tr>
+</table>

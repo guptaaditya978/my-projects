@@ -1,0 +1,14 @@
+<div style="background-color:'grey'">
+  <form>
+   USERNAME:<input type=text name="name" placeholder="name"><br>
+   PASSWORD:<input type=password  name="user_password" placeholder="password"><br>
+  <button style="position: 'centre' " name="Display users"  (click)="clickme()">Display users </button>
+  <button style="position: 'centre' " name="Sign In"  (click)="clickme()">Sign In </button>
+  <button style="position: 'centre' " name="Sign Up"  (click)="clickme()">Sign Up </button>
+  </form>
+  <br>
+  <table *ngIf="val">
+    <tr><th>Userid</th><th>Username</th></tr>
+    <tr *ngFor="let i of user"><td>{{i.id}}</td><td>{{i.name}}</td></tr>
+  </table>
+</div>

@@ -10,9 +10,14 @@ import {Router , ActivatedRoute} from '@angular/router';
 })
 export class StudentsComponent implements OnInit {
   public val=false;
-  public studentobj2: any ;
+  public studentobj2={
+    id:0,
+    name:'',
+    password:''
+  };
+  public stud3:any;
   public id2: number;
-  public message:String;
+  public message:any;
 
   clickonme(){
     this.val=!this.val
@@ -21,27 +26,33 @@ export class StudentsComponent implements OnInit {
   
   
   ngOnInit() {
-    this.id2=+this.route.snapshot.paramMap.get('this.user.id');
+    this.id2=+this.route.snapshot.paramMap.get('id');
     this.getdetail();
   }
   public getdetail()
   {
     console.log(this.id2);
-    this.studentservice.getprofile(this.id2).subscribe(studentobj2=> {
-      this.studentobj2=studentobj2;
+    this.studentservice.getprofile(this.id2).subscribe(stud3=> {
+    this.stud3 = stud3;
+    this.studentobj2=this.stud3;  
+    console.log(this.studentobj2);
   });
   }
 
   public ondelete()
   {
     this.studentservice.deleteuser(this.studentobj2.id).subscribe(message=>{
-    message= message;
+    this.message= message;
+    console.log(this.message);
+    this.router.navigate(['/']);
     });
   }
   public onupdate()
   {
-    this.studentservice.updateuser(this.studentobj2).subscribe(studentobj2=>{
-      this.studentobj2=studentobj2;
+    this.studentservice.updateuser(this.studentobj2).subscribe(stud3=>{
+      this.stud3=stud3;
+      this.studentobj2=this.stud3;
+      console.log(this.studentobj2);
     })
   }
 }  

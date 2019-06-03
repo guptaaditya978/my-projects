@@ -1,11 +1,11 @@
 <div>
-  <form (submit)="onupdate()">
+  <form (submit)="onupdate()" action="userlogin" method="get">
     USERID<BR>
-    <input type="number" name="id" value="{{studentobj2.id}}"><br>
+    <input type="number" name="id" [(ngModel)]="studentobj2.id"><br>
     USERNAME<br>
-    <input type="string" name="name" value="{{studentobj2.name}}"><br>
+    <input type="string" name="name" [(ngModel)]="studentobj2.name"><br>
     PASSWORD<br>
-    <input type="password" name="password" value="{{studentobj2.password}}"><br>
+    <input type="string" name="password" [(ngModel)]="studentobj2.password"><br>
     <input type="Submit" name="Update" value="Update"> <button name="Delete" (click)="ondelete()">DELETE MY ACCOUNT</button>         <a  class= " btn " routerLink="/student-details/{{id2}}"><button> GO BACK </button></a>
   </form>
     </div>

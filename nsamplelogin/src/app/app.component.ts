@@ -17,6 +17,7 @@ export class AppComponent {
     password:''
   };
   public b:boolean;
+  public val=true;
   public studpass: string;
   public totalusers: Userclass[];
   public sample:any;
@@ -31,10 +32,11 @@ export class AppComponent {
     this.studentservice.getlog(this.user).subscribe(message=> {
        
       this.message=message;
+      this.id1=this.user.id;
       if((this.message)==("Successfull"))
       {
        console.log(this.message);
-       this.router.navigate(['student-details/' + this.user.id]);
+       this.router.navigate(['student-details/' + this.id1]);
       }
       else if((this.message)==("Unsuccessfull")){
        console.log(this.message);
@@ -50,12 +52,13 @@ export class AppComponent {
     
     })
   }
-
-//   public getdetail() {
-
-//     this.studentservice.getUsers(this.studentobj).subscribe(user1=>{this.user1 = user1});
-//     console.log(this.user1);
-// //    this.router.navigate(['/student-details',this.id]);
-    
+//  public display()
+//   {
+//     this.studentservice.getUsers().subscribe(totalusers=>{
+//       this.totalusers=totalusers;
+//       this.val=true;
+//       console.log(this.totalusers);
+//     });
 //   }
- }
+
+}

@@ -29,7 +29,6 @@ export class StudentDetailsComponent implements OnInit {
   }
   public profile()
   {
-    console.log(this.id1);
     //this.router.navigateByUrl("/student-details/id");
     this.router.navigate(['students/'+ this.id1]);
     

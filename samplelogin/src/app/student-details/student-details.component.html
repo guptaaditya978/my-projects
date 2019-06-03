@@ -1,4 +1,4 @@
-<table *ngIf="val">
-  <tr><th>Userid</th><th>Username</th></tr>
-  <tr *ngFor="let i of user"><td>{{i.id}}</td><td>{{i.name}}</td></tr>
-</table>
+<button (click)="profile()">My profile</button>
+<a routerLink="/order/{{id1}}"><button>Order</button></a>
+<a routerLink="/"><button>LOGOUT</button></a>
+<b>{{k}}</b>

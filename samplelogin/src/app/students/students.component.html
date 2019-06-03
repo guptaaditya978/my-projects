@@ -1,14 +1,11 @@
-<div style="background-color:'grey'">
-  <form>
-   USERNAME:<input type=text name="name" placeholder="name"><br>
-   PASSWORD:<input type=password  name="user_password" placeholder="password"><br>
-  <button style="position: 'centre' " name="Display users"  (click)="clickme()">Display users </button>
-  <button style="position: 'centre' " name="Sign In"  (click)="clickme()">Sign In </button>
-  <button style="position: 'centre' " name="Sign Up"  (click)="clickme()">Sign Up </button>
+<div>
+  <form (submit)="onupdate()">
+    USERID<BR>
+    <input type="number" name="id" value="{{studentobj2.id}}"><br>
+    USERNAME<br>
+    <input type="string" name="name" value="{{studentobj2.name}}"><br>
+    PASSWORD<br>
+    <input type="password" name="password" value="{{studentobj2.password}}"><br>
+    <input type="Submit" name="Update" value="Update"> <button name="Delete" (click)="ondelete()">DELETE MY ACCOUNT</button>         <a  class= " btn " routerLink="/student-details/{{id2}}"><button> GO BACK </button></a>
   </form>
-  <br>
-  <table *ngIf="val">
-    <tr><th>Userid</th><th>Username</th></tr>
-    <tr *ngFor="let i of user"><td>{{i.id}}</td><td>{{i.name}}</td></tr>
-  </table>
-</div>
+    </div>

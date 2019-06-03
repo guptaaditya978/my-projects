@@ -1,0 +1,13 @@
+<h3>WELCOME {{studentobj3.name}}</h3>
+What whould you like to have<br>
+<!--<input type="checkbox" name= "food" value=1>Italian-50Rs.     <input type="range" name="quantity" min="1" max="10" step="1" value="1"><br>
+<input type="checkbox" name= "food" value=2>Indian-40Rs.     <input type="range" name="quantity" min="1" max="10" step="1" value="1"><br>
+<input type="checkbox" name= "food" value=3>Chineese-30Rs.     <input type="range" name="quantity" min="1" max="10" step="1" value="1"><br>
+<br>
+
+<a><button>Submit</button></a>
+-->
+Enter your order:<input type="text" name="order" [(ngModel)]="orders"><br>
+<hr>
+Thank You for your order naming:<br><b>{{orders}}</b><br><br>
+<a routerLink="/student-details/{{oid}}"><button> GO BACK </button></a>

@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-image: url("C:\Users\Aditya\Desktop\two.jpg");
+    background-image: url("two.jpg");
     height:40em; background-size:cover; width:auto;
     background-position:50% 50%;
 }

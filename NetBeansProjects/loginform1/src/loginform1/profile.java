@@ -77,8 +77,8 @@ public class profile extends HttpServlet {
 			{
 				try 
 				{
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userlogin", "root", "root");
+				Class.forName("com.mariadb.cj.jdbc.Driver");
+				Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/userlogin", "root", "root");
 				Statement stmt = conn.createStatement();
 				Base64.Decoder decoder = Base64.getDecoder(); 
 				String sqlStr = "select * from users where id='"+usersData.id+"'";  

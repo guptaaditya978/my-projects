@@ -24,4 +24,12 @@
     <servlet-name>profile</servlet-name>
     <url-pattern>/profile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>forgot</servlet-name>
+    <servlet-class>loginform1.forgot</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>forgot</servlet-name>
+    <url-pattern>/forgot</url-pattern>
+  </servlet-mapping>
 </web-app>

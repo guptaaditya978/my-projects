@@ -33,8 +33,8 @@ public class signup extends HttpServlet {
 		System.out.println(session==null);
 	   if(session!=null) {
 			try {
-				System.out.println("logout");
 				request.getSession(false).invalidate(); 
+				System.out.println("logout ho gaya");
 			}
 			catch(Exception e)
 			{
@@ -83,8 +83,8 @@ public class signup extends HttpServlet {
 	    if(request.getSession(false)==null)
 	    {
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userlogin","root","root");
+				Class.forName("com.mariadb.cj.jdbc.Driver");
+				conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/userlogin","root","root");
 				stmt = conn.createStatement();
 				Base64.Encoder encoder = Base64.getEncoder();
 				String str= encoder.encodeToString(usersData.password.getBytes());  

@@ -99,8 +99,8 @@ public class userlogin extends HttpServlet {
 	    {
 	    	
 	    	try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userlogin", "root", "root");
+				Class.forName("com.mariadb.cj.jdbc.Driver");
+				conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/userlogin", "root", "root");
 				stmt = conn.createStatement();
 				Base64.Encoder encoder = Base64.getEncoder();
 				String str= encoder.encodeToString(usersData.password.getBytes());  
@@ -144,34 +144,6 @@ public class userlogin extends HttpServlet {
 	
 	public void doDelete(HttpServletRequest request, HttpServletResponse response)throws IOException
 	{
-//		StringBuilder stringBuilder = new StringBuilder();
-//	    BufferedReader bufferedReader = null;
-//
-//	    try {
-//	        InputStream inputStream = request.getInputStream();
-//	        if (inputStream != null) {
-//	            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//	            char[] charBuffer = new char[128];
-//	            int bytesRead = -1;
-//	            while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
-//	                stringBuilder.append(charBuffer, 0, bytesRead);
-//	            }
-//	        } else {
-//	            stringBuilder.append("");
-//	        }
-//	    } catch (IOException ex) {
-//	        throw ex;
-//	    } finally {
-//	        if (bufferedReader != null) {
-//	            try {
-//	                bufferedReader.close();
-//	            } catch (IOException ex) {
-//	                throw ex;
-//	            }
-//	        }
-//	    }
-//
-//	    String body = stringBuilder.toString();
 	    mockusers usersData = new mockusers(0,"","","","","");
 	    //usersData.id=Integer.parseInt(request.getParameter("id").trim());
 	    PrintWriter out=response.getWriter();
@@ -181,8 +153,8 @@ public class userlogin extends HttpServlet {
 	    
 	    try {
 	    	int i=(int)request.getSession(false).getAttribute("logid");
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userlogin", "root", "root");
+			Class.forName("com.mariadb.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/userlogin", "root", "root");
 			Statement stmt = conn.createStatement();
 			String sqlStr = "delete from users where id='"+i+"'";  
 			stmt.executeUpdate(sqlStr); 
@@ -237,8 +209,8 @@ public class userlogin extends HttpServlet {
 	    if(request.getSession(false)!=null)
 	    {
 	    try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/userlogin", "root", "root");
+			Class.forName("com.mariadb.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/userlogin", "root", "root");
 			Statement stmt = conn.createStatement();
 			Base64.Encoder encoder = Base64.getEncoder();
 			String str= encoder.encodeToString((usersData.password).getBytes());  

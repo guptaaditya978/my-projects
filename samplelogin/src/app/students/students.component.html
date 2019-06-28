@@ -1,0 +1,73 @@
+<!-- <div>
+  <form (submit)="onupdate()" action="userlogin" method="get">
+    USERID<BR>
+    <input type="number" name="id" [(ngModel)]="studentobj2.id"><br>
+    USERNAME<br>
+    <input type="string" name="name" [(ngModel)]="studentobj2.name"><br>
+    PASSWORD<br>
+    <input type="string" name="password" [(ngModel)]="studentobj2.password"><br>
+    <input class="btn btn-info" type="Submit" name="Update" value="Update"> <button class="btn btn-danger" name="Delete" (click)="ondelete()">DELETE MY ACCOUNT</button>         <a  class= " btn " routerLink="/student-details/{{id2}}"><button class="btn btn-info"> GO BACK </button></a>
+  </form>
+    </div> -->
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <!-- Brand -->
+          <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button  class=" btn btn-dark"><a class="nav-link" routerLink="/students">My profile</a></button>
+            </li>
+            <li class="nav-item">
+                <button class=" btn btn-dark"><a class ="nav-link" routerLink="/order">Orders</a></button>
+            </li>
+          <li class="nav-item">
+                <button class=" btn btn-dark" (click)="logout()" ><a class="nav-link">LogOut</a></button>
+          </li>
+      
+        </ul>
+      </nav>
+      <br>
+      <div class="container">
+          <div id="login-row" class="row justify-content-center align-items-center">
+              <div id="login-column" class="col-md-6 ">
+                  <div id="login-box" class="col-md-12 mt-3">
+                      <form id="login-form" class="form"  (submit)="onupdate()">
+                          <h3 class="text-center text-info">My Profile</h3>
+                          <div class="form-group">
+                              <label for="userid" class="text-info">USERID*</label><br>
+                              <input type="text" name="userid" id="userid" class="form-control" [(ngModel)]="studentobj2.id" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="name" class="text-info">NAME*</label><br>
+                              <input type="text" name="name" id="name" class="form-control" [(ngModel)]="studentobj2.name" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="gender" class="text-info">GENDER*</label><br>
+                              <input type="text" name="gender" id="gender" class="form-control" [(ngModel)]="studentobj2.gender" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="password" class="text-info">PASSWORD*</label><br>
+                              <input type="text" name="password" id="password" class="form-control" [(ngModel)]="studentobj2.password" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="mobile" class="text-info">Mobile Number*</label><br>
+                              <input type="text" name="mobile" id="mobile" class="form-control" [(ngModel)]="studentobj2.mobile">
+                          </div>
+                          <div class="form-group">
+                              <label for="email" class="text-info">E-Mail</label><br>
+                              <input type="text" name="email" id="email" class="form-control" [(ngModel)]="studentobj2.email">
+                          </div>
+                          <div class="form-group">
+                              <input type="submit" name="submit" class="btn btn-success" value="Save and Update">
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger " (click)="ondelete()">DELTE MY ACCOUNT</button>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-info"><a routerLink="/student-details/{{id2}}">Go BACK</a></button>
+                          </div>
+                          <div class="form-group">
+                          <p class="pone">* details are necesaary to fill</p>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
